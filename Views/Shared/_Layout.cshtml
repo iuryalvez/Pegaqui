@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pegaqui</title> <!--  -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> <!-- padrão -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> <!-- padrão -->
+    <link rel="stylesheet" href="~/Pegaqui.styles.css" asp-append-version="true" /> <!-- padrão -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- não sei, inseri a fonte opensans atoa? -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- não sei -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> <!-- fonte OpenSans usada no projeto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!-- fonte do icone de pesquisa -->
+
+    <!-- usando o style para sobrescrever a formatação padrão -->
+    <style>
+        header {
+            background-color: #0069FF;
+            padding-block: 10px; /* padding: espaço do elemento com o limite da tela (eu acho) */
+            /* se fosse margin iria ter uma margem do elemento com o limite da tela, o padding aumenta o tamanho do elemento */
+        }
+
+        .btn-header {
+            color: #FFB200; /* cor do botão */
+            background-color: transparent; /* não quero um botão de fato, o texto é o botão */
+            text-align: center; /* alinhando horizontalmente o texto no centro */
+            font-weight: bold; /* intensidade do texto */
+            border: transparent;
+        }
+
+        .material-symbols-outlined {
+            vertical-align: middle; /* alinhamento vertical do icon em relação ao bloco em que ele está */
+        }
+
+        input::placeholder {
+            color: black; /* pseudo-seletor que faz com que o texto dos placeholders sejam pretos */
+        }
+
+    </style>
+</head>
+
+    <body>
+    <header>
+        <nav class="nav"> 
+            <div class="container-fluid"> <!-- container-fluid faz com que o container seja da maior largura possível dentro do header --> 
+                <div class="row"> <!-- definindo que o container tem uma row (linha), assim podemos dividir o conteúdo em col (colunas) -->
+                    <div class="col-auto flex-grow-0"> <!-- col-auto: faz com que a coluna seja do tamanho do elemento automaticamente (eu acho), flex-grow-0 é uma relação para fazer outro elemento crescer -->
+                        <a class="logo" style="font-weight:bold; color: #FFB200;" asp-area="" asp-controller="Home" asp-action="Index">Pegaqui</a>
+                    </div>
+                    <div class="col flex-grow-1"> <!-- flex-grow-1, o 1 eu acredito que seja como um booleano para indicar que este cresce em relação aos que são 0 -->
+                        <div class="d-flex"> <!-- d-flex: display-flex, display flexível, dessa forma posso unir o icon com o campo de pesquisa -->
+                            <div class="pesquisa-lupa">
+                                <span class="material-symbols-outlined">
+                                    search
+                                </span> <!-- copiado e colado do google fonts -->
+                            </div>
+                            <input type="text" class="pesquisa-input" placeholder="O que você está buscando?" aria-label="campoPesquisa">
+                        </div>                                         
+                    </div> 
+                    <div class="col-auto flex-grow-0">
+                        <button type="button" class="btn-header" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastre-se</button>
+                    </div>
+                    <div class="col-auto flex-grow-0">
+                        <button type="button" class="btn-header" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastroModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome de usuário</label>
+                            <input type="text" class="form-control" placeholder="Digite seu nome de usuário">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="text" class="form-control" placeholder="Digite seu e-mail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="text" class="form-control" placeholder="Digite sua senha">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Confirme sua senha</label>
+                            <input type="text" class="form-control" placeholder="Digite sua senha novamente">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label" for="formCheck">Li e aceito os termos de uso da plataforma</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="text" class="form-control" placeholder="Digite sua senha">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="formCheck">Lembrar informações</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2023 - Pegaqui
+            </div>
+        </footer>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

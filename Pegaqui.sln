@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pegaqui", "Pegaqui.csproj", "{43AF44E2-1C95-492C-B355-A18D52141A43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43AF44E2-1C95-492C-B355-A18D52141A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43AF44E2-1C95-492C-B355-A18D52141A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43AF44E2-1C95-492C-B355-A18D52141A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43AF44E2-1C95-492C-B355-A18D52141A43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {067172E6-7A18-4C0C-AFA5-06371F99FDDA}
+	EndGlobalSection
+EndGlobal
