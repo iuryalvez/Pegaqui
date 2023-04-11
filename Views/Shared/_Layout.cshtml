@@ -28,12 +28,45 @@
             border: transparent;
         }
 
-        .material-symbols-outlined {
-            vertical-align: middle; /* alinhamento vertical do icon em relação ao bloco em que ele está */
+        .form-control {
+            border-radius: 45px;
+            border: 0 none; /* tamanho da porda (px) e a cor */
+            outline: none;
+        }
+
+        .form-label {
+            text-indent: 10px;
         }
 
         input::placeholder {
             color: black; /* pseudo-seletor que faz com que o texto dos placeholders sejam pretos */
+        }
+
+        .material-symbols-outlined {
+            vertical-align: middle; /* alinhamento vertical do icon em relação ao bloco em que ele está */
+        }
+        .modal-dialog {
+            padding: 0 0 0 0;
+            background-color: transparent;
+        }
+
+        .modal-content {
+            padding:inherit;
+            background-color: #FFCB42;
+            border-radius: 30px;
+        }
+
+        .modal-header {
+            padding: 10px 10px 0 0;
+            border-bottom-color: #FFCB42;
+        }
+
+        .modal-title {
+            padding: inherit;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: x-large;
         }
 
     </style>
@@ -72,8 +105,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cadastroModalLabel">Cadastro</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="row flex-fill">
+                        <div class="col flex-grow-1">
+                            <h5 class="modal-title" id="cadastroModalLabel">Cadastro</h5>
+                        </div>
+                        <div class="col-auto flex-grow-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -97,7 +136,9 @@
                             <input type="checkbox" class="form-check-input">
                             <label class="form-check-label" for="formCheck">Li e aceito os termos de uso da plataforma</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <div class="mb-3" style="text-align:center;">
+                            <button type="submit" class="btn btn-modal-1">Cadastrar</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -108,8 +149,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="row flex-fill">
+                        <div class="col flex-grow-1">
+                            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                        </div>
+                        <div class="col-auto flex-grow-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -124,9 +171,9 @@
                         <input type="checkbox" class="form-check-input">
                         <label class="form-check-label" for="formCheck">Lembrar informações</label>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Entrar</button>
+                    <div class="mb-3" style="text-align: center;">
+                        <button type="submit" class="btn btn-modal-1">Entrar</button>
+                    </div>
                 </div>
             </div>
         </div>
