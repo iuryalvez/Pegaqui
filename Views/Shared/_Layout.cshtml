@@ -74,14 +74,15 @@
 
     <body>
     <header>
-        <nav class="nav"> 
-            <div class="container-fluid"> <!-- container-fluid faz com que o container seja da maior largura possível dentro do header --> 
-                <div class="row"> <!-- definindo que o container tem uma row (linha), assim podemos dividir o conteúdo em col (colunas) -->
-                    <div class="col-auto flex-grow-0"> <!-- col-auto: faz com que a coluna seja do tamanho do elemento automaticamente (eu acho), flex-grow-0 é uma relação para fazer outro elemento crescer -->
+        <nav class="nav justify-content-center"> <!-- navbar expand: expande a navbar (width: 100%) -->
+                <div class="row d-flex flex-md-fill px-2 px-md-4"> <!-- flex-fill: preencher todo espaço disponível com esta linha -->
+                    <!-- definindo que o container tem uma row (linha), assim podemos dividir o conteúdo em col (colunas) -->
+                    <div class="col flex-grow-0"> <!-- col-auto: faz com que a coluna seja do tamanho do elemento automaticamente (eu acho), flex-grow-0 é uma relação para fazer outro elemento crescer -->
                         <a class="logo" style="font-weight:bold; color: #FFB200;" asp-area="" asp-controller="Home" asp-action="Index">Pegaqui</a>
                     </div>
-                    <div class="col flex-grow-1"> <!-- flex-grow-1, o 1 eu acredito que seja como um booleano para indicar que este cresce em relação aos que são 0 -->
-                        <div class="d-flex"> <!-- d-flex: display-flex, display flexível, dessa forma posso unir o icon com o campo de pesquisa -->
+                <div class="col flex-grow-1 d-none d-md-block">
+                    <!-- flex-grow-1, o 1 eu acredito que seja como um booleano para indicar que este cresce em relação aos que são 0 -->
+                        <div class="d-flex flex-fill"> <!-- d-flex: display-flex, display flexível, dessa forma posso unir o icon com o campo de pesquisa -->
                             <div class="pesquisa-lupa">
                                 <span class="material-symbols-outlined">
                                     search
@@ -93,11 +94,10 @@
                     <div class="col-auto flex-grow-0">
                         <button type="button" class="btn-header" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastre-se</button>
                     </div>
-                    <div class="col-auto flex-grow-0">
+                    <div class="col flex-grow-0">
                         <button type="button" class="btn-header" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
                     </div>
                 </div>
-            </div>
         </nav>
     </header>
 
