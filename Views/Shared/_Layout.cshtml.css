@@ -28,7 +28,7 @@ a {
     border-radius: 45px;
 }
 
-.pesquisa-input {  
+.pesquisa-input { 
     text-indent: 5px; /* indentação do texto */
     width: 100%; /* largura */
     padding: 0 0 0 0; /* o quanto cresce em relação ao topo, direita, esquerda, baixo */

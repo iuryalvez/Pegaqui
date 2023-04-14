@@ -23,5 +23,20 @@ namespace Pegaqui.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public IActionResult Login(string email, string senha)
+        {
+            if (email == "pequi" && senha == "pequi")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Nome de usuário ou senha inválidos");
+                return View();
+            }
+        }
+    
     }
 }
