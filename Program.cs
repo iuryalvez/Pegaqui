@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Pegaqui.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<PegaquiContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PegaquiContext") ?? throw new InvalidOperationException("Connection string 'PegaquiContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
